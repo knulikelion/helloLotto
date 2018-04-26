@@ -55,7 +55,7 @@ $ rails g controller lottos index
 JSON은 **특정 언어에 상관없이 사용하기 편한 데이터**로 기억하자
 
 수많은 데이터 중 원하는 key를 넣으면 해당하는 value를 보여준다  
-```json
+```javascript
 {
     key: value,
     이름: "홍길동",
@@ -80,8 +80,8 @@ JSON은 **특정 언어에 상관없이 사용하기 편한 데이터**로 기�
 [나무위키](https://namu.wiki/w/%ED%95%B4%EC%8B%9C#s-2)는 좀더 친절히 설명 해두었다. 궁금하면 들어가보자
 
 해쉬는 루비가 데이터를 다루는 방식 중 하나라고 생각하자
-JSON과 동일하게 원하는 key를 넣으면 해당하는 value를 보여준다.
-```json
+javascript과 동일하게 원하는 key를 넣으면 해당하는 value를 보여준다.
+```javascript
 {
     key: value
 }
@@ -109,11 +109,11 @@ lotto_hash = JSON.parse(lotto_info)
 puts lotto_hash
 ```
 데이터를 가져옵니다
-```json
+```javascript
 {"bnusNo"=>2, "firstAccumamnt"=>18319051125, "firstWinamnt"=>3663810225, "returnValue"=>"success", "totSellamnt"=>75670793000, "drwtNo3"=>14, "drwtNo2"=>9, "drwtNo1"=>5, "drwtNo6"=>43, "drwtNo5"=>30, "drwtNo4"=>26, "drwNoDate"=>"2018-04-21", "drwNo"=>803, "firstPrzwnerCo"=>5}
 ```
 이는 컴퓨터가 보기 좋은 상태고 사람이 보기 좋게 들여쓰기 및 정리 해줍니다.
-```json
+```javascript
 {
     "bnusNo"=>2, 
     "firstAccumamnt"=>18319051125, 
@@ -146,7 +146,7 @@ data = JSON.parse(open("http://www.nlotto.co.kr/common.do?method=getLottoNumber&
 ```
 핵심 로직을 한줄로 줄일 수 있습니다.
 ## 원하는 데이터를 배열에 넣기
-```json
+```javascript
 {
     key1: value1,
     key2: value2,
