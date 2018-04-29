@@ -334,10 +334,26 @@ class LottosController < ApplicationController
   end
 end
 ```  
+## 사용자에게 보여줄 view(`index.html.erb`) 만들기 
+HTML만으로 형태를 만듭니다
+```erb
+<h1>당첨 번호 :<%= @jackpot %></h1>
+<h1>내 번호  :<%= @myNumber %></h1>
+<h1>겹치는 번호 : <%= @overlap %></h1>
+<h1><%= @answer %></h1>
+```
+## `routes.rb`
+
+```ruby
+Rails.application.routes.draw do
+  root 'lottos#index'
+end
+```
 
 ## `application.html.erb`    
 #### `bootstrap CDN` 붙이기   
 #### 나눔로또 `favicon` 붙이기  
+**favicon**은 브라우저 상단 탭에 있는 작은 이미지 입니다.
 #### 내용을 `container`에 집어넣기
 ```erb
 <!DOCTYPE html>
@@ -365,7 +381,7 @@ end
 </html>
 ```
 
-## 사용자에게 보여줄 view(`index.html.erb`) 만들기  
+## Bootstrap 사용한 view(`index.html.erb`)
 ```erb
 <div class="alert alert-primary" role="alert">  
 	<p>이번 주 로또 번호!!</p>
@@ -386,10 +402,4 @@ end
 <a href="/" class="btn btn-primary">한번 더?</a>
 ```
 
-## `routes.rb`
 
-```ruby
-Rails.application.routes.draw do
-  root 'lottos#index'
-end
-```
