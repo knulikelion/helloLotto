@@ -382,24 +382,6 @@ end
 ```
 
 ## Bootstrap 사용한 view(`index.html.erb`)
-```erb
-<div class="alert alert-primary" role="alert">  
-	<p>이번 주 로또 번호!!</p>
-	<% @jackpot.each do |img| %>
-		<img src="http://www.nlotto.co.kr/img/index/main_ball_<%= img %>.gif" >
-	<% end %>
-</div>
-<div class="alert alert-success" role="alert">  
-	<p>내가 뽑은 번호</p>
-	<% @myNumber.each do |img| %>
-		<img src="http://www.nlotto.co.kr/img/index/main_ball_<%= img %>.gif" >
-	<% end %>
-</div>
-<div class="alert alert-danger">
-	<p><%= @answer %></p>
-</div>
-<!-- root로 가는 새로고침 버튼-->
-<a href="/" class="btn btn-primary">한번 더?</a>
-```
+과제입니다
 
 
