@@ -382,6 +382,67 @@ end
 ```
 
 ## Bootstrap 사용한 view(`index.html.erb`)
-과제입니다
+Boostrap을 이용해 꾸미고 새로고침 버튼을 만듭니다.  
+새로고침을 하는 여러 방법 중 jQuery까지 한다면 당신은 만점  
+#### `jQuery`
+> jQuery란 사용자가 웹을 더 편히 사용하게 만드는 자바스크립트 라이브러리입니다.  
 
+
+생활코딩에서 친절히 설명해둔 자료입니다. [jQuery란?](https://opentutorials.org/course/53/45) 참조합니다.  
+
+#### 레일즈에서 `jQuery` 사용하자
+* jquery를 쓰기 위해서는 application.html.erb 파일에서 <head>태그 사이에 jquery를 가져오는 코드를 명시해주어야 정상 작동합니다.
+* 해당 코드는 bootstrap 사이트에서 css와 js를 사용하기 위해 사용했던 코드와 동일합니다. 또한 jquery 사이트에서도 cdn을 얻을 수 있습니다.
+ 
+#### `jQuery`로 페이지 새로고침하기  
+[한국어로 설명](https://www.thewordcracker.com/jquery-examples/refresh-current-page-using-javascript/)   
+[영어로 설명](https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery)
+
+#### 로또에서 배열에 나열된 정보를 하나씩 가져오는 방법
+* 대부분 배열의 인덱스값을 하나씩 가져오는 방법으로 이미지를 표현하였지만, 그 방법은 보이는 코드와 같이 반복되는 부분이 많아집니다. 그러므로 반복된 코드를 줄이는 방법을 사용합니다. 대게 다른 언어에서는 for문과 같이 반복문을 사용하여 해결하지만, 루비에서는 대부분 each do라는 함수를 사용하여 해결합니다.
+해당 정보는 ruby document 사이트를 참고하면 좋습니다.
+* 물론 루비에도 for 함수가 있으므로 for문을 활용해도 됩니다.
+
+**for 예시**
+```ruby
+for i in 0..4
+    puts "coding everybody #{i}"
+end
+```
+**each do 예시**
+```ruby
+@names.each do |name|
+  puts "Hello #{name}!"
+end
+```
+
+모범답안 `index.html.erb`
+```erb
+<div class="alert alert-primary" role="alert">  
+	<p>이번 주 로또 번호!!</p>
+	<% @jackpot.each do |img| %>
+		<img src="http://www.nlotto.co.kr/img/index/main_ball_<%= img %>.gif" >
+	<% end %>
+</div>
+<div class="alert alert-success" role="alert">  
+	<p>내가 뽑은 번호</p>
+	<% @myNumber.each do |img| %>
+		<img src="http://www.nlotto.co.kr/img/index/main_ball_<%= img %>.gif" >
+	<% end %>
+</div>
+<div class="alert alert-danger">
+	<p><%= @answer %></p>
+</div>
+<!--route.rb로 도전-->
+<a href="/" class="btn btn-primary">한번 더?</a>
+<!-- javascript: window.location.reload() 사용 -->
+<form><input type="button" value="페이지 새로 고침" onClick="window.location.reload()"></form>
+<!-- jQuery 사용-->
+<button id="refresh-btn">새로고침 버튼</button>
+<script>
+    $('#refresh-btn').click(function() {
+        location.reload();
+    });
+</script>
+```
 

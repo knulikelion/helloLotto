@@ -4,3 +4,29 @@
 <h1><%= @answer %></h1>
 
 
+<div class="alert alert-primary" role="alert">  
+	<p>이번 주 로또 번호!!</p>
+	<% @jackpot.each do |img| %>
+		<img src="http://www.nlotto.co.kr/img/index/main_ball_<%= img %>.gif" >
+	<% end %>
+</div>
+<div class="alert alert-success" role="alert">  
+	<p>내가 뽑은 번호</p>
+	<% @myNumber.each do |img| %>
+		<img src="http://www.nlotto.co.kr/img/index/main_ball_<%= img %>.gif" >
+	<% end %>
+</div>
+<div class="alert alert-danger">
+	<p><%= @answer %></p>
+</div>
+<!--route.rb로 도전-->
+<a href="/" class="btn btn-primary">한번 더?</a>
+<!-- javascript: window.location.reload() 사용 -->
+<form><input type="button" value="페이지 새로 고침" onClick="window.location.reload()"></form>
+<!-- jQuery 사용-->
+<button id="refresh-btn">새로고침 버튼</button>
+<script>
+    $('#refresh-btn').click(function() {
+        location.reload();
+    });
+</script>
